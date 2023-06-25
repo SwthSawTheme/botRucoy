@@ -9,7 +9,7 @@ lizard_images = [
     'lizardMDown.png', 'lizardMLeft.png', 'lizardMRight.png', 'lizardMUp.png',
     'lizardWDown.png', 'lizardWLeft.png', 'lizardWRight.png', 'lizardWUp.png'
 ]
-pyautogui.hotkey('Alt','tab')
+pyautogui.hotkey('Alt','tab') #Para alternar do seu editor de código para o emulador
 
 time.sleep(3)
 
@@ -26,7 +26,7 @@ def verificarMana():
         mana_pos = pyautogui.locateOnScreen(mana,confidence=0.7)
         
         if mana_pos is not None:
-            # Se a imagem for encontrada, pressione a tecla '2'
+            # Se a imagem for encontrada, pressionará a tecla '2'
             pyautogui.press('2')
             time.sleep(60)
         
