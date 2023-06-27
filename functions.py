@@ -117,6 +117,8 @@ def andar():
         AndarMapa3()
         time.sleep(1)
         pyautogui.press('3')
+        time.sleep(1)
+        pyautogui.press('1')
         
         AndarMapa4()
         time.sleep(6)
@@ -124,6 +126,8 @@ def andar():
         AndarMapa4()
         time.sleep(1)
         pyautogui.press('3')
+        time.sleep(1)
+        pyautogui.press('1')
         
         AndarMapa5()
         time.sleep(5)
@@ -131,6 +135,8 @@ def andar():
         AndarMapa5()
         time.sleep(1)
         pyautogui.press('3')
+        time.sleep(1)
+        pyautogui.press('1')
         
         AndarMapa6()
         time.sleep(6)
@@ -138,6 +144,8 @@ def andar():
         AndarMapa6()
         time.sleep(1)
         pyautogui.press('3')
+        time.sleep(1)
+        pyautogui.press('1')
         
         AndarMapa5()
         time.sleep(6)
@@ -145,6 +153,8 @@ def andar():
         AndarMapa5()
         time.sleep(1)
         pyautogui.press('3')
+        time.sleep(1)
+        pyautogui.press('1')
         
         AndarMapa4()
         time.sleep(6)
@@ -152,6 +162,8 @@ def andar():
         AndarMapa4()
         time.sleep(1)
         pyautogui.press('3')
+        time.sleep(1)
+        pyautogui.press('1')
         
         AndarMapa3()
         time.sleep(8)
@@ -159,6 +171,8 @@ def andar():
         AndarMapa3()
         time.sleep(1)
         pyautogui.press('3')
+        time.sleep(1)
+        pyautogui.press('1')
         
         AndarMapa2()
         time.sleep(10)
@@ -166,6 +180,8 @@ def andar():
         AndarMapa2()
         time.sleep(1)
         pyautogui.press('3')
+        time.sleep(1)
+        pyautogui.press('1')
         
         AndarMapa1()
         time.sleep(10)
@@ -195,7 +211,7 @@ def capturar_screenshot():
             contador += 1
 
         # Esperar um tempo antes de verificar novamente
-        pyautogui.sleep(1)
+        time.sleep(10)
         
 
 

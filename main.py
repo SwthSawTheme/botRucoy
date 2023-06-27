@@ -48,12 +48,15 @@ thread_andar = threading.Thread(target=andar)
 thread_lizard = threading.Thread(target=lizard)
 thread_mana = threading.Thread(target=verificarMana)
 thread_life = threading.Thread(target=verificarlife)
+thread_screenshot = threading.Thread(target=capturar_screenshot)
+
 
 # Iniciar as threads
 thread_andar.start()
 thread_lizard.start()
 thread_mana.start()
 thread_life.start()
+thread_screenshot.start()
 
 input("Pressione enter para interromper...")
 execucao = False
