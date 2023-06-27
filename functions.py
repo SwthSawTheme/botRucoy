@@ -79,7 +79,7 @@ def verificarlife():
         life_pos = pyautogui.locateCenterOnScreen(life, confidence=0.7)
         if life_pos is not None:
             pyautogui.press('3')
-            time.sleep(20)
+            time.sleep(15)
 
 # Lista de nomes de arquivo para as diferentes imagens de "lizard"
 lizard_images = [
@@ -119,6 +119,10 @@ def andar():
         pyautogui.press('3')
         time.sleep(1)
         pyautogui.press('1')
+        time.sleep(1)
+        pyautogui.press('3')
+        time.sleep(1)
+       
         
         AndarMapa4()
         time.sleep(6)
@@ -128,6 +132,9 @@ def andar():
         pyautogui.press('3')
         time.sleep(1)
         pyautogui.press('1')
+        time.sleep(1)
+        pyautogui.press('3')
+        time.sleep(1)
         
         AndarMapa5()
         time.sleep(5)
@@ -137,6 +144,9 @@ def andar():
         pyautogui.press('3')
         time.sleep(1)
         pyautogui.press('1')
+        time.sleep(1)
+        pyautogui.press('3')
+        time.sleep(1)
         
         AndarMapa6()
         time.sleep(6)
@@ -146,6 +156,9 @@ def andar():
         pyautogui.press('3')
         time.sleep(1)
         pyautogui.press('1')
+        time.sleep(1)
+        pyautogui.press('3')
+        time.sleep(1)
         
         AndarMapa5()
         time.sleep(6)
@@ -155,6 +168,9 @@ def andar():
         pyautogui.press('3')
         time.sleep(1)
         pyautogui.press('1')
+        time.sleep(1)
+        pyautogui.press('3')
+        time.sleep(1)
         
         AndarMapa4()
         time.sleep(6)
@@ -164,6 +180,9 @@ def andar():
         pyautogui.press('3')
         time.sleep(1)
         pyautogui.press('1')
+        time.sleep(1)
+        pyautogui.press('3')
+        time.sleep(1)
         
         AndarMapa3()
         time.sleep(8)
@@ -173,6 +192,9 @@ def andar():
         pyautogui.press('3')
         time.sleep(1)
         pyautogui.press('1')
+        time.sleep(1)
+        pyautogui.press('3')
+        time.sleep(1)
         
         AndarMapa2()
         time.sleep(10)
