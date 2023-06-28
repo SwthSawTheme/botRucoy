@@ -6,7 +6,6 @@ def AndarMapa1():
     mapa = os.path.join('images/mapa/mapa.png')
     mapa_pos = pyautogui.locateOnScreen(mapa,confidence=0.7)
     pyautogui.click(mapa_pos)
-    time.sleep(1)
     mapa1 = os.path.join('images/mapa/mapa1.png')
     mapa_pos = pyautogui.locateOnScreen(mapa1,confidence=0.7)
     pyautogui.click(mapa_pos)
@@ -16,47 +15,46 @@ def AndarMapa2():
     mapa = os.path.join('images/mapa/mapa.png')
     mapa_pos2 = pyautogui.locateOnScreen(mapa,confidence=0.7)
     pyautogui.click(mapa_pos2)
-    time.sleep(1)
     mapa2 = os.path.join('images/mapa/mapa2.png')
     mapa_pos2 = pyautogui.locateOnScreen(mapa2,confidence=0.7)
     pyautogui.click(mapa_pos2)
     pyautogui.press('f1')
+    pyautogui.press('3')
     
 def AndarMapa3():
     mapa = os.path.join('images/mapa/mapa.png')
     mapa_pos3 = pyautogui.locateOnScreen(mapa,confidence=0.7)
     pyautogui.click(mapa_pos3)
-    time.sleep(1)
     mapa3 = os.path.join('images/mapa/mapa3.png')
     mapa_pos3 = pyautogui.locateOnScreen(mapa3,confidence=0.7)
     pyautogui.click(mapa_pos3)
     pyautogui.press('f1')
+    pyautogui.press('3')
 
 def AndarMapa4():
     mapa = os.path.join('images/mapa/mapa.png')
     mapa_pos4 = pyautogui.locateOnScreen(mapa,confidence=0.7)
     pyautogui.click(mapa_pos4)
-    time.sleep(1)
     mapa4 = os.path.join('images/mapa/mapa4.png')
     mapa_pos4 = pyautogui.locateOnScreen(mapa4,confidence=0.7)
     pyautogui.click(mapa_pos4)
     pyautogui.press('f1')
+    pyautogui.press('3')
 
 def AndarMapa5():
     mapa = os.path.join('images/mapa/mapa.png')
     mapa_pos5 = pyautogui.locateOnScreen(mapa,confidence=0.7)
     pyautogui.click(mapa_pos5)
-    time.sleep(1)
     mapa5 = os.path.join('images/mapa/mapa5.png')
     mapa_pos5 = pyautogui.locateOnScreen(mapa5,confidence=0.7)
     pyautogui.click(mapa_pos5)
     pyautogui.press('f1')
+    pyautogui.press('3')
     
 def AndarMapa6():
     mapa = os.path.join('images/mapa/mapa.png')
     mapa_pos6 = pyautogui.locateOnScreen(mapa,confidence=0.7)
     pyautogui.click(mapa_pos6)
-    time.sleep(1)
     mapa6 = os.path.join('images/mapa/mapa6.png')
     mapa_pos6 = pyautogui.locateOnScreen(mapa6,confidence=0.7)
     pyautogui.click(mapa_pos6)
@@ -79,7 +77,7 @@ def verificarlife():
         life_pos = pyautogui.locateCenterOnScreen(life, confidence=0.7)
         if life_pos is not None:
             pyautogui.press('3')
-            time.sleep(15)
+            time.sleep(10)
 
 # Lista de nomes de arquivo para as diferentes imagens de "lizard"
 lizard_images = [
@@ -91,15 +89,23 @@ lizard_images = [
 ]
 
 def lizard():
+    # Coordenadas da região retangular desejada (x, y, largura, altura)
+    region = (350, 200, 766, 469)
+
     while True:
+        # Capturar a imagem da região desejada
+        screenshot = pyautogui.screenshot(region=region)
+
         for image in lizard_images:
-            # Verificar se a imagem atual está presente na tela
+            # Verificar se a imagem atual está presente na captura da região
             liz = os.path.join("images/lizard/", image)
-            lizard_pos = pyautogui.locateOnScreen(liz, confidence=0.7)
+            lizard_pos = pyautogui.locateOnScreen(liz, region=region, confidence=0.6)
+            
             if lizard_pos is not None:
                 flecha = os.path.join('images/skills/flecha.png')
-                pyautogui.locateOnScreen(flecha)
+                pyautogui.locateOnScreen(flecha, confidence=0.7)
                 pyautogui.press('1')
+        
         time.sleep(1)
 
 def andar():
@@ -108,42 +114,29 @@ def andar():
         time.sleep(3)
         
         AndarMapa2()
-        time.sleep(10)
-        pyautogui.press('3')
-        
-        AndarMapa3()
-        time.sleep(12)
-        pyautogui.press('3')
-        AndarMapa3()
-        time.sleep(1)
-        pyautogui.press('3')
-        time.sleep(1)
-        pyautogui.press('1')
-        time.sleep(1)
-        pyautogui.press('3')
-        time.sleep(1)
-       
-        
-        AndarMapa4()
-        time.sleep(6)
-        pyautogui.press('3')
-        AndarMapa4()
-        time.sleep(1)
-        pyautogui.press('3')
-        time.sleep(1)
-        pyautogui.press('1')
-        time.sleep(1)
-        pyautogui.press('3')
-        time.sleep(1)
-        
-        AndarMapa5()
         time.sleep(5)
         pyautogui.press('3')
-        AndarMapa5()
+        
+        AndarMapa3()
+        time.sleep(6)
+        pyautogui.press('3')
+        time.sleep(1)
+        AndarMapa3()
+        pyautogui.press('3')
+        time.sleep(1)
+        pyautogui.press('2')
+        
+        AndarMapa4()
+        time.sleep(6)
+        pyautogui.press('3')
         time.sleep(1)
         pyautogui.press('3')
         time.sleep(1)
-        pyautogui.press('1')
+        
+        AndarMapa5()
+        time.sleep(6)
+        pyautogui.press('3')
+        AndarMapa5()
         time.sleep(1)
         pyautogui.press('3')
         time.sleep(1)
@@ -151,62 +144,41 @@ def andar():
         AndarMapa6()
         time.sleep(6)
         pyautogui.press('3')
-        AndarMapa6()
         time.sleep(1)
-        pyautogui.press('3')
-        time.sleep(1)
-        pyautogui.press('1')
-        time.sleep(1)
-        pyautogui.press('3')
+        pyautogui.press('2')
         time.sleep(1)
         
         AndarMapa5()
         time.sleep(6)
         pyautogui.press('3')
-        AndarMapa5()
         time.sleep(1)
-        pyautogui.press('3')
-        time.sleep(1)
-        pyautogui.press('1')
-        time.sleep(1)
-        pyautogui.press('3')
+        pyautogui.press('2')
         time.sleep(1)
         
         AndarMapa4()
         time.sleep(6)
         pyautogui.press('3')
-        AndarMapa4()
         time.sleep(1)
-        pyautogui.press('3')
-        time.sleep(1)
-        pyautogui.press('1')
-        time.sleep(1)
-        pyautogui.press('3')
+        pyautogui.press('2')
         time.sleep(1)
         
         AndarMapa3()
-        time.sleep(8)
+        time.sleep(6)
         pyautogui.press('3')
-        AndarMapa3()
-        time.sleep(1)
-        pyautogui.press('3')
-        time.sleep(1)
-        pyautogui.press('1')
         time.sleep(1)
         pyautogui.press('3')
         time.sleep(1)
         
         AndarMapa2()
-        time.sleep(10)
+        time.sleep(6)
         pyautogui.press('3')
         AndarMapa2()
         time.sleep(1)
         pyautogui.press('3')
         time.sleep(1)
-        pyautogui.press('1')
         
         AndarMapa1()
-        time.sleep(10)
+        time.sleep(8)
 
 def capturar_screenshot():
     # Pasta para salvar as screenshots
@@ -234,6 +206,3 @@ def capturar_screenshot():
 
         # Esperar um tempo antes de verificar novamente
         time.sleep(10)
-        
-
-

@@ -50,7 +50,6 @@ thread_mana = threading.Thread(target=verificarMana)
 thread_life = threading.Thread(target=verificarlife)
 thread_screenshot = threading.Thread(target=capturar_screenshot)
 
-
 # Iniciar as threads
 thread_andar.start()
 thread_lizard.start()
@@ -64,3 +63,6 @@ execucao = False
 # Esperar que as threads terminem a execução
 thread_andar.join()
 thread_lizard.join()
+thread_mana.join()
+thread_life.join()
+thread_screenshot.join()
