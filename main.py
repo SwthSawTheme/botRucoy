@@ -1,6 +1,5 @@
 import time
 import pyautogui
-from functions import lizard
 from functions import verificarMana
 from functions import andar
 from functions import verificarlife
@@ -16,27 +15,20 @@ execucao = True
 def func1():
     global execucao
     while execucao:
-        # Lógica da função andar
         andar()
         time.sleep(3)
-
-def func2():
-    global execucao
-    while execucao:
-        lizard()
-        time.sleep(1)
 
 def func3():
     global execucao
     while execucao:
         verificarMana()
-        time.sleep(3)
+        time.sleep(6)
 
 def func4():
     global execucao
     while execucao:
         verificarlife()
-        time.sleep(2)
+        time.sleep(3)
         
 def func5():
     global execucao
@@ -45,25 +37,22 @@ def func5():
         time.sleep(1)
 
 # Criar as threads para as funções andar e lizard
-thread_andar = threading.Thread(target=andar)
-thread_lizard = threading.Thread(target=lizard)
-thread_mana = threading.Thread(target=verificarMana)
-thread_life = threading.Thread(target=verificarlife)
-thread_screenshot = threading.Thread(target=capturar_screenshot)
+thread_andar = threading.Thread(target=func1)
+thread_mana = threading.Thread(target=func3)
+thread_life = threading.Thread(target=func4)
+thread_screenshot = threading.Thread(target=func5)
 
 # Iniciar as threads
 thread_andar.start()
-thread_lizard.start()
 thread_mana.start()
 thread_life.start()
 thread_screenshot.start()
-
+print('Executand0...')
 input("Pressione enter para interromper...")
 execucao = False
 
 # Esperar que as threads terminem a execução
 thread_andar.join()
-thread_lizard.join()
 thread_mana.join()
 thread_life.join()
 thread_screenshot.join()

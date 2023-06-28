@@ -69,7 +69,7 @@ def verificarMana():
         if mana_pos is not None:
             # Se a imagem for encontrada, pressionará a tecla '2'
             pyautogui.press('2')
-            time.sleep(6)
+            time.sleep(10)
 
 def verificarlife():
     while True:
@@ -77,77 +77,102 @@ def verificarlife():
         life_pos = pyautogui.locateCenterOnScreen(life, confidence=0.7)
         if life_pos is not None:
             pyautogui.press('3')
-            time.sleep(3)
+            time.sleep(10)
 
 lizard_images = [
     'lizardADown.png', 'lizardAleft.png', 'lizardARight.png', 'lizardAUp.png',
     'lizardMDown.png', 'lizardMLeft.png', 'lizardMRight.png', 'lizardMUp.png',
     'lizardWDown.png', 'lizardWLeft.png', 'lizardWRight.png', 'lizardWUp.png',
     'lizardCDown.png', 'lizardCLeft.png', 'lizardCRight.png', 'lizardCUp.png',
-    'lizardHDown.png', 'lizardHLeft.png', 'lizardHRight.png', 'lizardHUp.png'
-    
+    'lizardHDown.png', 'lizardHLeft.png', 'lizardHRight.png', 'lizardHUp.png'    
 ]
 
 def lizard():
     # Coordenadas da região retangular desejada (x, y, largura, altura)
     region = (350, 200, 766, 469)
 
-    while True:
-        # Capturar a imagem da região desejada
-        screenshot = pyautogui.screenshot(region=region)
+    # Capturar a imagem da região desejada
+    teste = pyautogui.screenshot(region=region)
 
-        for image in lizard_images:
-            # Verificar se a imagem atual está presente na captura da região
-            liz = os.path.join("images/lizard/", image)
-            lizard_pos = pyautogui.locateOnScreen(liz, region=region, confidence=0.6)
-            
-            if lizard_pos is not None:
-                flecha = os.path.join('images/skills/flecha.png')
-                pyautogui.locateOnScreen(flecha, confidence=0.7)
-                pyautogui.press('1')
+    for image in lizard_images:
+        # Verificar se a imagem atual está presente na captura da região
+        liz = os.path.join("images/lizard/", image)
+        lizard_pos = pyautogui.locateOnScreen(liz, region=region, confidence=0.7)
         
-        time.sleep(1)
+        if lizard_pos is not None:
+            flecha = os.path.join('images/skills/sword.png')
+            pyautogui.locateOnScreen(flecha, confidence=0.6)
+            pyautogui.press('space')
+            pyautogui.press('1')
+            pyautogui.press('space')
+            
+    time.sleep(1)
 
 def andar():
     while True:
+        lizard()
         AndarMapa1()
-        time.sleep(3)
+        lizard()
+        lizard()
+        lizard()
         
+        lizard()
         AndarMapa2()
-        time.sleep(10)
+        lizard()
+        lizard()
+        lizard()
         
+        lizard()
         AndarMapa3()
-        time.sleep(12)
-        AndarMapa3()
-        time.sleep(1)
+        lizard()
+        lizard()
+        lizard()
+        lizard()
+        lizard()
 
+        lizard()
         AndarMapa4()
-        time.sleep(10)
+        lizard()
+        lizard()
+        lizard()
         
+        lizard()
         AndarMapa5()
-        time.sleep(6)
-        AndarMapa5()
-        time.sleep(1)
+        lizard()
+        lizard()
         
+        lizard()
         AndarMapa6()
-        time.sleep(6)
+        lizard()
+        lizard()
         
+        lizard()
         AndarMapa5()
-        time.sleep(6)
+        lizard()
+        lizard()
         
+        lizard()
         AndarMapa4()
-        time.sleep(6)
-        
+        lizard()
+        lizard()
+
+        lizard()
         AndarMapa3()
-        time.sleep(8)
+        lizard()
+        lizard()
         
+        lizard()
         AndarMapa2()
-        time.sleep(6)
-        AndarMapa2()
-        time.sleep(1)
+        lizard()
+        lizard()
         
+        lizard()
         AndarMapa1()
-        time.sleep(8)
+        lizard()
+        lizard()
+        lizard()
+        lizard()
+        lizard()
 
 def capturar_screenshot():
     # Pasta para salvar as screenshots
@@ -159,7 +184,7 @@ def capturar_screenshot():
     while True:
         # Verificar se a imagem "level.png" está presente na tela
         level = os.path.join("images/player/level.png")
-        level_pos = pyautogui.locateOnScreen(level, confidence=0.8)
+        level_pos = pyautogui.locateOnScreen(level, confidence=0.6)
 
         if level_pos is not None:
             # Capturar a screenshot da tela
