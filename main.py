@@ -18,7 +18,7 @@ def func1():
     while execucao:
         # Lógica da função andar
         andar()
-        time.sleep(1)
+        time.sleep(3)
 
 def func2():
     global execucao
@@ -30,13 +30,14 @@ def func3():
     global execucao
     while execucao:
         verificarMana()
-        time.sleep(1)
+        time.sleep(3)
 
 def func4():
     global execucao
     while execucao:
         verificarlife()
-        time.sleep(1)
+        time.sleep(2)
+        
 def func5():
     global execucao
     while execucao:
