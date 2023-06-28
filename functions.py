@@ -77,7 +77,7 @@ def verificarlife():
         life_pos = pyautogui.locateCenterOnScreen(life, confidence=0.7)
         if life_pos is not None:
             pyautogui.press('3')
-            time.sleep(10)
+            time.sleep(5)
 
 lizard_images = [
     'lizardADown.png', 'lizardAleft.png', 'lizardARight.png', 'lizardAUp.png',
@@ -102,9 +102,7 @@ def lizard():
         if lizard_pos is not None:
             flecha = os.path.join('images/skills/sword.png')
             pyautogui.locateOnScreen(flecha, confidence=0.6)
-            pyautogui.press('space')
             pyautogui.press('1')
-            pyautogui.press('space')
             
     time.sleep(1)
 
@@ -180,23 +178,25 @@ def capturar_screenshot():
     if not os.path.exists(pasta_destino):
         os.makedirs(pasta_destino)
 
-    contador = 1
-    while True:
-        # Verificar se a imagem "level.png" está presente na tela
-        level = os.path.join("images/player/level.png")
-        level_pos = pyautogui.locateOnScreen(level, confidence=0.6)
+    # Verificar se a imagem "level.png" está presente na tela
+    level = os.path.join("images/player/level.png")
+    level_pos = pyautogui.locateOnScreen(level, confidence=0.6)
 
-        if level_pos is not None:
-            # Capturar a screenshot da tela
-            screenshot = pyautogui.screenshot()
+    if level_pos is not None:
+        # Capturar a screenshot da tela
+        screenshot = pyautogui.screenshot()
 
-            # Salvar a screenshot com nome sequencial na pasta destino
-            arquivo_destino = os.path.join(pasta_destino, f"screenshot{contador}.png")
-            screenshot.save(arquivo_destino)
-
-            print(f"Screenshot capturada e salva: {arquivo_destino}")
-
+        # Definir o nome do arquivo destino
+        contador = 1
+        arquivo_destino = os.path.join(pasta_destino, f"screenshot{contador}.png")
+        
+        # Verificar se o arquivo destino já existe e incrementar o contador se necessário
+        while os.path.exists(arquivo_destino):
             contador += 1
+            arquivo_destino = os.path.join(pasta_destino, f"screenshot{contador}.png")
 
-        # Esperar um tempo antes de verificar novamente
-        time.sleep(10)
+        # Salvar a screenshot com o nome sequencial na pasta destino
+        screenshot.save(arquivo_destino)
+
+        print(f"Screenshot capturada e salva: {arquivo_destino}")
+    time.sleep(6)
