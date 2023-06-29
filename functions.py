@@ -121,12 +121,9 @@ def andar():
         lizard()
         lizard()
         lizard()
-        lizard()
-        lizard()
 
         lizard()
         AndarMapa4()
-        lizard()
         lizard()
         lizard()
         lizard()
@@ -135,21 +132,14 @@ def andar():
         AndarMapa5()
         lizard()
         lizard()
-        lizard()
-        lizard()
-        
         
         lizard()
         AndarMapa6()
         lizard()
         lizard()
-        lizard()
-        lizard()
         
         lizard()
         AndarMapa5()
-        lizard()
-        lizard()
         lizard()
         lizard()
 
@@ -158,13 +148,9 @@ def andar():
         AndarMapa4()
         lizard()
         lizard()
-        lizard()
 
-    
         lizard()
         AndarMapa3()
-        lizard()
-        lizard()
         lizard()
         lizard()
          
@@ -173,12 +159,9 @@ def andar():
         lizard()
         lizard()
         lizard()
-        lizard()
-        lizard()
         
         lizard()
         AndarMapa1()
-        lizard()
         lizard()
         lizard()
 
