@@ -101,7 +101,7 @@ def lizard():
             flecha = os.path.join('images/skills/sword.png')
             pyautogui.locateOnScreen(flecha, confidence=0.6)
             pyautogui.press('1')
-    
+               
 def andar():
     while True:
         lizard()
@@ -165,6 +165,11 @@ def andar():
         lizard()
         lizard()
 
+def reconnect():
+    rec = os.path.join('images/server/reconnect.png')
+    rec_position = pyautogui.locateOnScreen(rec, confidence=0.6)
+    if rec_position is not None:
+        pyautogui.click(rec_position)
 
 def capturar_screenshot():
     # Pasta para salvar as screenshots
