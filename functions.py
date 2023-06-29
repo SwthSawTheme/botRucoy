@@ -77,7 +77,7 @@ def verificarlife():
         life_pos = pyautogui.locateCenterOnScreen(life, confidence=0.7)
         if life_pos is not None:
             pyautogui.press('3')
-            time.sleep(5)
+            time.sleep(4)
 
 lizard_images = [
     'lizardADown.png', 'lizardAleft.png', 'lizardARight.png', 'lizardAUp.png',
@@ -93,29 +93,25 @@ def lizard():
 
     # Capturar a imagem da região desejada
     teste = pyautogui.screenshot(region=region)
-
     for image in lizard_images:
         # Verificar se a imagem atual está presente na captura da região
         liz = os.path.join("images/lizard/", image)
-        lizard_pos = pyautogui.locateOnScreen(liz, region=region, confidence=0.7)
-        
+        lizard_pos = pyautogui.locateOnScreen(liz, region=region, confidence=0.6)
         if lizard_pos is not None:
             flecha = os.path.join('images/skills/sword.png')
             pyautogui.locateOnScreen(flecha, confidence=0.6)
             pyautogui.press('1')
-            
-    time.sleep(1)
-
+    
 def andar():
     while True:
         lizard()
         AndarMapa1()
         lizard()
         lizard()
-        lizard()
         
         lizard()
         AndarMapa2()
+        lizard()
         lizard()
         lizard()
         lizard()
@@ -133,34 +129,50 @@ def andar():
         lizard()
         lizard()
         lizard()
+        lizard()
         
         lizard()
         AndarMapa5()
         lizard()
         lizard()
+        lizard()
+        lizard()
+        
         
         lizard()
         AndarMapa6()
         lizard()
         lizard()
+        lizard()
+        lizard()
         
         lizard()
         AndarMapa5()
         lizard()
         lizard()
+        lizard()
+        lizard()
+
         
         lizard()
         AndarMapa4()
         lizard()
         lizard()
+        lizard()
 
+    
         lizard()
         AndarMapa3()
         lizard()
         lizard()
-        
+        lizard()
+        lizard()
+         
         lizard()
         AndarMapa2()
+        lizard()
+        lizard()
+        lizard()
         lizard()
         lizard()
         
@@ -169,8 +181,7 @@ def andar():
         lizard()
         lizard()
         lizard()
-        lizard()
-        lizard()
+
 
 def capturar_screenshot():
     # Pasta para salvar as screenshots

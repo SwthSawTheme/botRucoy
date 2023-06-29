@@ -4,7 +4,6 @@ from functions import verificarMana
 from functions import andar
 from functions import verificarlife
 from functions import capturar_screenshot
-from functions import lizard
 import threading
 
 pyautogui.hotkey('alt','tab')
@@ -18,12 +17,6 @@ def func1():
     while execucao:
         andar()
         time.sleep(3)
-        
-def func2():
-    global execucao
-    while execucao:
-        lizard()
-        time.sleep(1)
 
 def func3():
     global execucao
@@ -45,13 +38,11 @@ def func5():
 
 # Criar as threads para as funções andar e lizard
 thread_andar = threading.Thread(target=func1)
-thread_lizard = threading.Thread(target=func2)
 thread_mana = threading.Thread(target=func3)
 thread_life = threading.Thread(target=func4)
 thread_screenshot = threading.Thread(target=func5)
 
 # Iniciar as threads
-thread_lizard.start()
 thread_andar.start()
 thread_mana.start()
 thread_life.start()
@@ -62,7 +53,6 @@ input("Pressione enter para interromper...")
 execucao = False
 
 # Esperar que as threads terminem a execução
-thread_lizard.join()
 thread_andar.join()
 thread_mana.join()
 thread_life.join()
