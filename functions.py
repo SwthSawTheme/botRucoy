@@ -61,23 +61,21 @@ def AndarMapa6():
     pyautogui.press('f1')
       
 def verificarMana():
-    while True:
-        mana = os.path.join('images/player/mana.png')
-        # Verificar se a imagem "mana.png" está presente na tela
-        mana_pos = pyautogui.locateOnScreen(mana,confidence=0.7)
-        
-        if mana_pos is not None:
-            # Se a imagem for encontrada, pressionará a tecla '2'
-            pyautogui.press('2')
-            time.sleep(10)
+    mana = os.path.join('images/player/mana.png')
+    # Verificar se a imagem "mana.png" está presente na tela
+    mana_pos = pyautogui.locateOnScreen(mana,confidence=0.7)
+    
+    if mana_pos is not None:
+        # Se a imagem for encontrada, pressionará a tecla '2'
+        pyautogui.press('2')
+        time.sleep(10)
 
 def verificarlife():
-    while True:
-        life = os.path.join('images/player/life.png')
-        life_pos = pyautogui.locateCenterOnScreen(life, confidence=0.7)
-        if life_pos is not None:
-            pyautogui.press('3')
-            time.sleep(4)
+    life = os.path.join('images/player/life.png')
+    life_pos = pyautogui.locateCenterOnScreen(life, confidence=0.7)
+    if life_pos is not None:
+        pyautogui.press('3')
+        time.sleep(4)
 
 lizard_images = [
     'lizardADown.png', 'lizardAleft.png', 'lizardARight.png', 'lizardAUp.png',
