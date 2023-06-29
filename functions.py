@@ -19,7 +19,6 @@ def AndarMapa2():
     mapa_pos2 = pyautogui.locateOnScreen(mapa2,confidence=0.7)
     pyautogui.click(mapa_pos2)
     pyautogui.press('f1')
-    pyautogui.press('3')
     
 def AndarMapa3():
     mapa = os.path.join('images/mapa/mapa.png')
@@ -29,7 +28,6 @@ def AndarMapa3():
     mapa_pos3 = pyautogui.locateOnScreen(mapa3,confidence=0.7)
     pyautogui.click(mapa_pos3)
     pyautogui.press('f1')
-    pyautogui.press('3')
 
 def AndarMapa4():
     mapa = os.path.join('images/mapa/mapa.png')
@@ -39,7 +37,6 @@ def AndarMapa4():
     mapa_pos4 = pyautogui.locateOnScreen(mapa4,confidence=0.7)
     pyautogui.click(mapa_pos4)
     pyautogui.press('f1')
-    pyautogui.press('3')
 
 def AndarMapa5():
     mapa = os.path.join('images/mapa/mapa.png')
@@ -49,7 +46,6 @@ def AndarMapa5():
     mapa_pos5 = pyautogui.locateOnScreen(mapa5,confidence=0.7)
     pyautogui.click(mapa_pos5)
     pyautogui.press('f1')
-    pyautogui.press('3')
     
 def AndarMapa6():
     mapa = os.path.join('images/mapa/mapa.png')
@@ -68,14 +64,14 @@ def verificarMana():
     if mana_pos is not None:
         # Se a imagem for encontrada, pressionará a tecla '2'
         pyautogui.press('2')
-        time.sleep(10)
+    time.sleep(6)
 
 def verificarlife():
     life = os.path.join('images/player/life.png')
     life_pos = pyautogui.locateCenterOnScreen(life, confidence=0.7)
     if life_pos is not None:
         pyautogui.press('3')
-        time.sleep(4)
+    time.sleep(3)
 
 lizard_images = [
     'lizardADown.png', 'lizardAleft.png', 'lizardARight.png', 'lizardAUp.png',
@@ -141,7 +137,6 @@ def andar():
         lizard()
         lizard()
 
-        
         lizard()
         AndarMapa4()
         lizard()
@@ -168,6 +163,7 @@ def reconnect():
     rec_position = pyautogui.locateOnScreen(rec, confidence=0.6)
     if rec_position is not None:
         pyautogui.click(rec_position)
+    time.sleep(1)
 
 def capturar_screenshot():
     # Pasta para salvar as screenshots

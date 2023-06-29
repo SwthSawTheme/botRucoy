@@ -9,8 +9,6 @@ import threading
 
 pyautogui.hotkey('alt','tab')
 
-time.sleep(1)
-
 execucao = True
 
 def func1():
@@ -29,13 +27,13 @@ def func3():
     global execucao
     while execucao:
         verificarMana()
-        time.sleep(6)
+        time.sleep(1)
 
 def func4():
     global execucao
     while execucao:
         verificarlife()
-        time.sleep(3)
+        time.sleep(1)
         
 def func5():
     global execucao
