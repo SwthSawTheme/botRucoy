@@ -86,7 +86,7 @@ def lizard():
     region = (350, 200, 766, 469)
 
     # Capturar a imagem da região desejada
-    teste = pyautogui.screenshot(region=region)
+    pyautogui.screenshot(region=region)
     for image in lizard_images:
         # Verificar se a imagem atual está presente na captura da região
         liz = os.path.join("images/lizard/", image)
